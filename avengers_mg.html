@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Avengers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/heroes-assemble" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/avengers_style.css">
+</head>
+
+<body>
+    <div class="bg">
+        <div class="container">
+            <main>
+                <h1 class="mainTitle">Jogo da memoria</h1>
+
+                <select class="select">
+                    <option value="easy">Nível fácil</option>
+                    <option value="medium">Nível médio</option>
+                    <option value="hard">Nível difícil</option>
+                </select>
+
+                <div class="memoryCards">
+                    <div class="cardEasy cardMedium cardHard card" data-framework="ironMan">
+                        <img class="frontFace" src="img/ironMan.png" id="ironManImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardEasy cardMedium cardHard card" data-framework="ironMan">
+                        <img class="frontFace" src="img/ironMan.png" id="ironManImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardEasy cardMedium cardHard card" data-framework="captainAmerica">
+                        <img class="frontFace" src="img/captainAmerica.png" id="captainAmericaImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardEasy cardMedium cardHard card" data-framework="captainAmerica">
+                        <img class="frontFace" src="img/captainAmerica.png" id="captainAmericaImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardEasy cardMedium cardHard card" data-framework="thor">
+                        <img class="frontFace" src="img/thor.png" id="thorImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardEasy cardMedium cardHard card" data-framework="thor">
+                        <img class="frontFace" src="img/thor.png" id="thorImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardNotEasy cardMedium cardHard card" data-framework="hawkeye">
+                        <img class="frontFace" src="img/hawkeye.png" id="hawkeyeImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardNotEasy cardMedium cardHard card" data-framework="hawkeye">
+                        <img class="frontFace" src="img/hawkeye.png" id="hawkeyeImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardNotEasy cardMedium cardHard card" data-framework="blackWidow">
+                        <img class="frontFace" src="img/blackWidow.png" id="blackWidowImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardNotEasy cardMedium cardHard card" data-framework="blackWidow">
+                        <img class="frontFace" src="img/blackWidow.png" id="blackWidowImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardNotEasy cardMedium cardHard card" data-framework="hulk">
+                        <img class="frontFace" src="img/hulk.png" id="hulkImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardNotEasy cardMedium cardHard card" data-framework="hulk">
+                        <img class="frontFace" src="img/hulk.png" id="hulkImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardNotEasy cardNotMedium cardHard card" data-framework="spiderMan">
+                        <img class="frontFace" src="img/spiderMan.png" id="spiderManImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardNotEasy cardNotMedium cardHard card" data-framework="spiderMan">
+                        <img class="frontFace" src="img/spiderMan.png" id="spiderManImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardNotEasy cardNotMedium cardHard card" data-framework="blackPanther">
+                        <img class="frontFace" src="img/blackPanther.png" id="blackPantherImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardNotEasy cardNotMedium cardHard card" data-framework="blackPanther">
+                        <img class="frontFace" src="img/blackPanther.png" id="blackPantherImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardNotEasy cardNotMedium cardHard card" data-framework="vision">
+                        <img class="frontFace" src="img/vision.png" id="visionImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+
+                    <div class="cardNotEasy cardNotMedium cardHard card" data-framework="vision">
+                        <img class="frontFace" src="img/vision.png" id="visionImg">
+                        <h1 class="backFace">?</h1>
+                    </div>
+                </div>
+
+                <div class="victoryScreen">
+                    <div class="victoryMessage">
+                        <img src="img/avengerslogo.png">
+                        <h1>AVANTE!</h1>
+                        <h2>Parabéns, você terminou esse jogo da memória. Experimente jogar uma outra dificuldade ou
+                            jogue na mesma novamente.</h2>
+                        <button onClick="window.location.reload()">Jogar novamente</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="glow glowBottomLeft"></div>
+    <div class="glow glowTopRight"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+:root {
+    --fontFamily: 'Peppa Pig';
+    --border: #970950;
+    --letter: #F174AC;
+    --shadow: #970950;
+    --card: #FFFFFF;
+    --bgBottomColor: #EE93BC;
+    --glow: #BC1C6C;
+    --frontBg: #FFFFFF;
+    --playAgain: #000000;
+    --playAgainBg: #F5B7D3;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--playAgainBg);
+    overflow: hidden;
+}
+
+.bg {
+    height: 100vh;
+    background: linear-gradient(360deg, var(--bgBottomColor) 23.37%, rgba(15, 15, 15, 0) 100%), url(../img/peppaBg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 1152px;
+    margin:auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainTitle {
+    font-family: var(--fontFamily);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    letter-spacing: 0.1em;
+    color: var(--letter);
+    text-shadow: 0px 0px 8px var(--shadow);
+    margin-top: 104px;
+    z-index: 0;
+}
+
+select {
+    padding: 13px 165px 13px 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--border);
+
+    margin: 40px 0 86.5px;
+    z-index: 0;
+}
+
+.memoryCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    z-index: 1;
+    perspective: 1000px;
+}
+
+.card {
+    width: 160px;
+    height: 160px;
+
+    margin: 17.5px 16px;
+    z-index: inherit;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.notCard {
+    display: none;
+}
+
+.frontFace, .backFace {
+    position: absolute;
+    backface-visibility: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frontFace {
+    transform: rotateY(180deg);
+    padding: 30px;
+    max-width: 160px;
+    max-height: 160px;
+    box-sizing: border-box;
+    width: auto;
+    height: 100%;
+    background: var(--frontBg);
+    border-radius: 12px;
+}
+
+#richardImg {
+    padding: 30px calc(50% - 33px);
+}
+
+#pedroImg {
+    padding: 30px calc(50% - 47px);
+}
+
+#candyImg {
+    padding: 30px calc(50% - 40px);
+}
+
+#mamaeImg {
+    padding: 30px calc(50% - 38.5px);
+}
+
+#wendyImg {
+    padding: 30px calc(50% - 48px);
+}
+
+#papaiImg, #jorgeImg {
+    padding: 30px calc(50% - 42.5px);
+}
+
+.backFace {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+
+    font-family: var(--fontFamily);
+    font-weight: 400;
+    font-size: 72px;
+    letter-spacing: 0.1em;
+    color: var(--letter);
+    text-shadow: 0px 0px 8px var(--shadow);
+
+    background: var(--card);
+    border: 2px solid var(--border);
+    box-shadow: 0px 0px 8px var(--shadow);
+    border-radius: 12px;
+}
+
+.frontFace:hover, .backFace:hover {
+    cursor: pointer;
+}
+
+.victoryScreen {
+    display: none;
+}
+
+.gameWon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(14, 16, 21, 0.8);
+}
+
+.victoryMessage {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 500px;
+    height: 300px;
+    background-color: var(--playAgainBg);
+    border-radius: 16px;
+}
+
+.victoryMessage img {
+    width: 150px;
+    position: absolute;
+    top: -45px;
+    right: -50px;
+}
+
+.victoryMessage h1 {
+    font-family: var(--fontFamily);
+    font-weight: 400;
+    font-size: 48px;
+    letter-spacing: 0.1em;
+    color: var(--letter);
+    text-shadow: 0px 0px 8px var(--shadow);
+}
+
+.victoryMessage h2 {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    width: 423px;
+    color: var(--playAgain);
+    margin: 24px 0 55px;
+}
+
+.gameWon button {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: 0px 0px 8px var(--shadow);
+    border-radius: 8px;
+    padding: 9px 73px;
+
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--playAgain);
+}
+
+.gameWon button:hover {
+    cursor: pointer;
+}
+
+.glow {
+    background: radial-gradient(50% 50% at 50% 50%, var(--glow) 0%, rgba(44, 44, 44, 0) 100%);
+    opacity: 0.1;
+    height: 822px;
+    width: 822px;
+    z-index: -1;
+    position: absolute;
+}
+
+.glowTopRight {    
+    top: -300px;
+    right: -300px;
+}
+
+.glowBottomLeft {
+    bottom: -350px;
+    left: -300px;
+}
+
+@media(max-width: 768px) {
+    .container {
+        max-width: 400px;
+    }
+
+    .mainTitle {
+        font-size: 32px;
+        margin-top: 56px;
+    }
+
+    select {
+        padding: 9px 120px 9px 12px;
+        
+        margin: 40px 0 45.5px;
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+
+        margin: 10.5px;
+    }
+    
+    .frontFace {
+        padding: 10px;
+        border-radius: 13.5px;
+    }
+
+    #richardImg {
+        padding: 10px calc(50% - 23px);
+    }
+    
+    #pedroImg {
+        padding: 10px calc(50% - 33px);
+    }
+    
+    #candyImg {
+        padding: 10px calc(50% - 28px);
+    }
+    
+    #mamaeImg {
+        padding: 10px calc(50% - 27px);
+    }
+    
+    #wendyImg {
+        padding: 10px calc(50% - 33.5px);
+    }
+    
+    #papaiImg {
+        padding: 10px calc(50% - 30px);
+    }
+
+    #jorgeImg {
+        padding: 10px calc(50% - 34px);
+    }
+    
+    .backFace {
+        font-size: 40.5px;
+        text-shadow: 0px 0px 4.5px var(--shadow);
+    
+        border: 1.125px solid var(--border);
+        box-shadow: 0px 0px 4.5px var(--shadow);
+        border-radius: 6.75px;
+    
+        width: calc(100% - 2.25px);
+        height: calc(100% - 2.25px);
+    }
+
+    .victoryMessage {
+        width: 274px;
+        height: 246px;
+        border-radius: 8.76308px;
+    }
+    
+    .victoryMessage img {
+        width: 70px;
+        height: auto;
+        top: -14px;
+        right: -14.09px;
+    }
+    
+    .victoryMessage h1 {
+        font-size: 32px;
+        text-shadow: 0px 0px 4.38154px var(--shadow);
+    }
+    
+    .victoryMessage h2 {
+        font-size: 14px;
+        line-height: 20px;
+        width: 219px;
+        margin: 24px 0 24.16px;
+    }
+    
+    .gameWon button {
+        border: 0.547692px solid var(--border);
+        box-shadow: 0px 0px 4.38154px #B63C00;
+        border-radius: 4.38154px;
+        padding: 6.5px 45.5px;
+    
+        font-size: 14px;
+    }
+}
