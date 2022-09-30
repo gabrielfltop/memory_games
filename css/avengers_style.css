@@ -37,7 +37,7 @@ main {
 }
 
 .mainTitle {
-    font-family: 'Heroes Assemble';
+    font-family: var(--fontFamily);
     font-style: normal;
     font-weight: 400;
     font-size: 72px;
